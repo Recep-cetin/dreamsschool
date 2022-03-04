@@ -1,0 +1,206 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Anasablon.master.cs" Inherits="hayalerim.Anasablon" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="bootstrap.css" rel="stylesheet" />
+    <script src="bootstrap.js"></script>
+    <%--  <a href="partials/_layout.scss">partials/_layout.scss</a>
+    <a href="partials/_variables.scss">partials/_variables.scss</a>
+    <a href="scss/style.scss">scss/style.scss</a>--%>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/jquery.mobile.custom.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modernizr.js"></script>
+    <%-- <script type="text/javascript" src="ckeditor/ckeditor.js"></script>--%>   
+
+    <title>xeyal kur,hevi dure ...</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .profil {position:absolute;left:570px;
+            border:solid;border-top-left-radius:50px;border-top-right-radius:50px;
+                        border-bottom-left-radius:50px;border-bottom-right-radius:50px;border-color:green;
+        }
+         .profil1 {position:absolute;left:570px;
+            border:solid;border-radius:1px;border-color:green;
+        }
+        
+     
+        .td {
+            border: 3px;
+            border-color: red;
+        }
+
+        .div {
+            border: 5px double;
+            margin: 5px;
+            border-radius: 30px;
+             margin-bottom:10px;
+            margin-top:20px;
+            height:19px;
+            
+        }
+
+        .style2 {
+            margin: 0 auto;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .bdy {
+            color: #ffffff;
+        }
+        .pnl {
+            position:absolute;border-bottom-right-radius:50px;border-top-left-radius:50px;
+            border:solid;border-color:green;left:440px;padding-bottom:30px;
+           padding-top:40px;padding-left:20px;padding-right:20px;
+        }
+        .sd{position:center;}
+        .ort {
+            position:absolute;left:435px;top:250px;font-size:29px;
+        }
+        .meslek {background-color:white;font-size:13pt; 
+           height:220px;width:500px;border:solid;margin-left:390px;padding-top:12px;margin-top:20px;
+            border-top-left-radius:50px;border-bottom-right-radius:50px;margin-bottom:50px;padding-bottom:25px;
+        }
+        .mes {
+          /*position:absolute;*/ height:60px;width:350px;border:solid;margin-left:75px;margin-top:12px;padding-top:10px;padding-left:70px;
+            background-color:green;  border-top-right-radius:50px;border-bottom-left-radius:50px;
+        }
+        .yaz {
+            padding-left:10px;padding-right:10px;
+        }
+        .linkbtn {
+        color:snow;
+        }
+        .icerik {
+            background-color:white;font-size:13pt; 
+           height:290px;width:600px;border:solid;margin-left:390px;padding-top:12px;margin-top:10px;
+            border-top-left-radius:50px;border-bottom-right-radius:50px;margin-bottom:50px;padding-bottom:25px;
+            padding-left:15px;
+        }
+        .sayfa {
+            height:60px;width:350px;border:solid;margin-left:245px;margin-top:12px;padding-top:7px;padding-left:70px;
+            background-color:green;  border-top-right-radius:50px;border-bottom-left-radius:50px;
+        }
+    </style>
+</head>
+
+<body>
+    
+   <form runat="server">
+
+              <header class="cd-main-header">
+ 
+     <a class="cd-logo" href="default.aspx"><img src="img/enson (1).svg" alt="Logo"></a> 
+                  
+                  <!-- bu satır telefon modundayen gorunur -->
+        <ul class="cd-header-buttons">
+            <li><a class="cd-search-trigger" href="#cd-search">Search<span></span></a></li>
+            <li><a class="cd-nav-trigger" href="#cd-primary-nav">Menu<span></span></a></li>
+        </ul> 
+    </header>
+
+    <main class="cd-main-content">
+        <!-- Mega Site Navigasyonu -->
+        <div style="float:right;width:100%;";>
+       
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+                 
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:hayalerimConnectionString3 %>" SelectCommand="SELECT * FROM [karakter] WHERE ([uye_id] = @uye_id)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="lblklncid" Name="uye_id" PropertyName="Text" Type="Int32" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+                 
+            </asp:ContentPlaceHolder>
+              
+                
+          </div>
+        <div class="cd-overlay"></div>
+        
+    </main>
+    <div>
+       
+    <nav class="cd-nav">
+         <!-- <asp:Panel ID="pnlUyeGirisi" runat="server">   </asp:Panel>-->
+
+       
+        <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
+            
+            <li class="has-children">
+                <a href="#0">ALT BAŞLIKLAR</a>
+
+                <ul class="cd-secondary-nav is-hidden">
+                    
+                    <li class="go-back"><a href="egitimseviyem.aspx">EĞİTTİM SEVİYEM</a></li>
+                    <li class="see-all"><a href="#0">ALT BAŞLIKLAR</a></li>
+                                     
+                      <li class="has-children"> <a href="yorumlar.aspx">YORUMLAR</a></li>
+                      <li class="has-children"> <a href="#">NEDEN Mİ BİZ ?</a></li>                   
+                      <li class="has-children"> <a href="#">AMAÇLARIMIZ</a></li>
+                       <li class="has-children"><a href="kisilik.aspx">  <asp:Panel ID="pnlkisilik" runat="server" > KİŞİLİK TESTİ </asp:Panel></a><a href="#0">  <asp:Panel ID="Panel3" runat="server" Visible="false"> CEREZ BİLGİ</asp:Panel></a>  </li>
+                    <%--<a href="">yorumlar.aspx</a> burraya birsey yazınca sayfa altı kucuk lınkler olarak karsımız cıkıyor--%>
+                    
+                          <%--buradakı li ler alt baslklalrın alt baslıkları--%>
+                    <%--<li>bilinmeyen</li>
+                    <li>bilinmeyen</li>
+                    <li>bilinmeyen</li>--%>
+                </ul>
+            </li>
+
+            <li class="has-children">
+                <!-- ... -->
+            </li>
+            
+            <li class="has-children">
+               
+            </li>
+          
+            
+            <li><asp:Panel ID="Panel2" runat="server"> <a href="default.aspx"><h3 style="color:green;">ANA SAYFA</h3></a>  </asp:Panel></li>          
+            <li>  <asp:Panel ID="uyeler" runat="server"> <a href="uyelik.aspx"><h3 style="color:green;">REĞİTTİM</h3></a>  </asp:Panel></li>   
+                <%--  <li><asp:Panel ID="uyeismi" runat="server"><a "><h3 style="color:blueviolet;"> <asp:Label ID="lbluyeismi" runat="server"> </asp:Label></h3>
+                </a>  </asp:Panel></li>--%>
+           <li> <asp:Panel ID="SINAV" runat="server" Visible="false"><a href="dersprogramı.aspx"><h3 style="color:green;">DERS PRG</h3></a> </asp:Panel> <br />   </li>
+             <li> <asp:Panel ID="Panel1" runat="server" Visible="false"><a href="hesabım.aspx"><h3 style="color:green;">HESAP'IM</h3></a> </asp:Panel> <br />   </li>
+            <li> <asp:Panel ID="pnlUyeGiri" runat="server"><a href="giris.aspx"><h3 style="color:green;">GİRİŞ</h3></a> </asp:Panel> <br />   </li>  
+             <li> <asp:Panel ID="pnlCikis" runat="server" Visible="false"><a href="giris.aspx"><h3 style="color:green;">ÇIKIŞ</h3></a> </asp:Panel></li>
+          
+        </ul> <!-- primary-nav -->
+          
+         <asp:Label ID="lblklncid" runat="server" Visible="False"></asp:Label>
+         <asp:Label ID="Lblkarakter" runat="server" Visible="False"></asp:Label>
+          
+    </nav> <!-- cd-nav -->
+       
+
+    <div id="cd-search" class="cd-search">
+        
+            <input type="search" placeholder="Search...">
+
+                        
+
+        
+    </div>
+    </form>
+   <pre class="style2 "> <center>&nbsp;PROFESYONEL EGİTİM VE YÖNLENDİRME SİTESİDİR ..&nbsp;</center></pre>
+          
+               
+            
+               
+            
+        
+       
+
+    
+</body>
+</html>
+ 
